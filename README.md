@@ -14,5 +14,5 @@ Working Site: (https://showplex.netlify.app/).
 
 ## Source
 
-This Website is Based on a Tutorial By [freeCodeCamp.org] (https://youtu.be/nTeuhbP7wdE).
+This Website is Based on a Tutorial By [freeCodeCamp.org](https://youtu.be/nTeuhbP7wdE).
 
