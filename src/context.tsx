@@ -1,16 +1,21 @@
-import react, { useState, createContext, useContext, ReactNode } from "react"
+import react, { useState, createContext, ReactNode } from "react"
 
-export const Context = createContext()
+interface ContextProp {
+    state: string
+    setState: (user: string) => void
+}
+
+export const Context = createContext({} as ContextProp)
 
 interface UserProviderProp {
     children: ReactNode
 }
 
 const UserProvider = ({ children }: UserProviderProp) => {
-    const [state, setState] = useState(undefined)
+    const [state, setState] = useState(" ")
 
     return (
-        <Context.Provider value={[state, setState]}>
+        <Context.Provider value={{ state, setState }}>
             {children}
         </Context.Provider>
     )
