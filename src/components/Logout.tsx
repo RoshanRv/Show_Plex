@@ -1,28 +1,37 @@
-import React from 'react'
-import { useContext ,useState} from 'react'
-import { Context } from '../context'
-import { useNavigate } from 'react-router-dom'
+import React from "react"
+import { useContext, useState } from "react"
+import { Context } from "../context"
+import { useNavigate } from "react-router-dom"
 
-const Logout = ({vis}) => {
+interface LogoutProp {
+    vis: boolean
+}
 
+const Logout = ({ vis }: LogoutProp) => {
     const navigate = useNavigate()
 
-    const [user,setUser]=useContext(Context)
+    const { user, setUser } = useContext(Context)
 
-    const handleLogout=()=>{
-
+    const handleLogout = () => {
         setUser(undefined)
 
-        localStorage.removeItem('loginid')
+        localStorage.removeItem("loginid")
 
-        navigate('/')
-
-
+        navigate("/")
     }
 
     return (
-        <div className={`w-max absolute bg-gray-900/30 top-[63px]  md:top-[89px] md:w-32 transition-all w-24  z-50 h-0 ${(user!=undefined && vis===true )&&'h-20 '} overflow-hidden `}>
-            <h1 className={`font-display text-lg md:text-2xl p-4 text-white bg-transparent text-center `} onClick={()=>handleLogout()}>Logout</h1>
+        <div
+            className={` absolute bg-gray-900/30 top-[63px]  md:top-[89px] md:w-32 transition-all w-24  z-50 h-0 ${
+                user != undefined && vis === true && "h-20 "
+            } overflow-hidden `}
+        >
+            <h1
+                className={`font-display text-lg md:text-2xl p-4 text-white bg-transparent text-center `}
+                onClick={() => handleLogout()}
+            >
+                Logout
+            </h1>
         </div>
     )
 }

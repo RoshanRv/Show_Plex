@@ -1,8 +1,13 @@
 import react, { useState, createContext, ReactNode } from "react"
 
+export interface UserProp {
+    sessionid: string
+    username: string
+}
+
 interface ContextProp {
-    state: string
-    setState: (user: string) => void
+    user: UserProp | undefined
+    setUser: (user: UserProp | undefined) => void
 }
 
 export const Context = createContext({} as ContextProp)
@@ -12,10 +17,10 @@ interface UserProviderProp {
 }
 
 const UserProvider = ({ children }: UserProviderProp) => {
-    const [state, setState] = useState(" ")
+    const [user, setUser] = useState<undefined | UserProp>()
 
     return (
-        <Context.Provider value={{ state, setState }}>
+        <Context.Provider value={{ user, setUser }}>
             {children}
         </Context.Provider>
     )
