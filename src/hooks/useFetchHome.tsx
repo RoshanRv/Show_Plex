@@ -1,68 +1,67 @@
-import { stringify } from 'postcss'
-import {useState , useEffect} from 'react'
-import API from '../API'
-import { persistState } from '../helpers'
+import { stringify } from "postcss"
+import { useState, useEffect } from "react"
+import API from "../API"
+import { Movie, Credits, Cast, Crew, Movies } from "../API"
+import { persistState } from "../helpers"
 
 const initialState = {
-    page:0,
-    results:[],
-    total_results:0,
-    total_pages:0
+    page: 0,
+    results: [] as Movie[],
+    total_results: 0,
+    total_pages: 0,
 }
 
 export const useFetchHome = () => {
-    
-    const [isLoadMore,setIsLoadMore]=useState(false)
-    const [searchTerm,setSearchTerm]=useState('')
-    const [state,setState]=useState(initialState)
-    const [loading,setLoading]=useState(false)
-    const [error,setError]=useState(false)
+    const [isLoadMore, setIsLoadMore] = useState(false)
+    const [searchTerm, setSearchTerm] = useState("")
+    const [state, setState] = useState(initialState)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
 
-    const fetchMovies=async(page,searchtitle="")=>{
-        try{
+    const fetchMovies = async (page: number, searchtitle = "") => {
+        try {
             setError(false)
             setLoading(true)
 
-            const movies = await API.fetchMovies(searchtitle,page);
+            const movies = await API.fetchMovies(searchtitle, page)
 
-            setState((pre)=>({
-               ...movies,
-               results: page>1?[...pre.results, ...movies.results]:[...movies.results] 
+            setState((pre) => ({
+                ...movies,
+                results:
+                    page > 1
+                        ? [...pre.results, ...movies.results]
+                        : [...movies.results],
             }))
-
-
-
-        }catch(error){
+        } catch (error) {
             setError(true)
-
         }
         setLoading(false)
     }
 
-    useEffect(()=>{ 
-        if(!searchTerm){
-            const sessionState = persistState('homeState')
+    useEffect(() => {
+        if (!searchTerm) {
+            const sessionState = persistState("homeState")
 
-            if(sessionState){
+            if (sessionState) {
                 setState(sessionState)
-                return 
+                return
             }
         }
         setState(initialState)
-        fetchMovies(1,searchTerm)},[searchTerm] )
+        fetchMovies(1, searchTerm)
+    }, [searchTerm])
 
-    useEffect(()=>{
-        if (!isLoadMore )return
-        fetchMovies(state.page + 1,searchTerm)
+    useEffect(() => {
+        if (!isLoadMore) return
+        fetchMovies(state.page + 1, searchTerm)
         setIsLoadMore(false)
-    },[isLoadMore])
+    }, [isLoadMore])
 
-    useEffect(()=>{
-        if(!searchTerm && state.results.length > 1){
-            sessionStorage.setItem('homeState', JSON.stringify(state))
+    useEffect(() => {
+        if (!searchTerm && state.results.length > 1) {
+            sessionStorage.setItem("homeState", JSON.stringify(state))
         }
+    }, [searchTerm, state])
 
-    },[searchTerm, state])
-
-    return {state,loading,error,setSearchTerm,searchTerm,setIsLoadMore}
+    return { state, loading, error, setSearchTerm, searchTerm, setIsLoadMore }
 }
