@@ -1,8 +1,7 @@
-import React from "react"
+// hooks
 import { useState, useEffect } from "react"
 import { useFetchHome } from "@hooks/useFetchHome"
-
-import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config"
+// images
 import no_img from "@images/no_image.png"
 // Components
 import HomeHero from "@components/HomeHero"
@@ -11,6 +10,8 @@ import Thumbnail from "@components/Thumbnail"
 import Spinner from "@components/Spinner"
 import SearchBar from "@components/SearchBar"
 import LoadMore from "@components/LoadMore"
+
+import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "src/config"
 
 const Home = () => {
     const [hero, setHero] = useState(0)
