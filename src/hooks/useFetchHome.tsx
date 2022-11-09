@@ -1,8 +1,8 @@
 import { stringify } from "postcss"
 import { useState, useEffect } from "react"
-import API from "../API"
-import { Movie, Credits, Cast, Crew, Movies } from "../API"
-import { persistState } from "../helpers"
+import API from "src/API"
+import { Movie, Credits, Cast, Crew, Movies } from "src/API"
+import { persistState } from "src/helpers"
 
 const initialState = {
     page: 0,

@@ -1,6 +1,6 @@
 import React from "react"
 import { useState, useEffect, useRef } from "react"
-import search from "../images/search-icon.svg"
+import search from "@images/search-icon.svg"
 
 interface SearchbarProps {
     searchText: (value: string) => void

@@ -1,6 +1,6 @@
 import React from "react"
-import { Movie } from "../API"
-import { calcTime, convertMoney } from "../helpers"
+import { Movie } from "src/API"
+import { calcTime, convertMoney } from "src/helpers"
 
 interface MovieInfoBarProps {
     runtime: number

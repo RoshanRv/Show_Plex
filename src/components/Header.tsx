@@ -2,11 +2,11 @@ import React, { useContext, useState, useRef } from "react"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 // Images
-import show_plex from "../images/show-plex_logo.png"
-import tmdb_logo from "../images/tmdb_logo.svg"
+import show_plex from "@images/show-plex_logo.png"
+import tmdb_logo from "@images/tmdb_logo.svg"
 // Components
 import { Context } from "../context"
-import Logout from "./Logout"
+import Logout from "@components/Logout"
 
 const Header = () => {
     const { user, setUser } = useContext(Context)

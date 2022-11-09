@@ -1,16 +1,16 @@
 import React from "react"
 import { useState, useEffect } from "react"
-import { useFetchHome } from "../hooks/useFetchHome"
+import { useFetchHome } from "@hooks/useFetchHome"
 
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config"
-import no_img from "../images/no_image.png"
+import no_img from "@images/no_image.png"
 // Components
-import HomeHero from "./HomeHero"
-import Grid from "./Grid"
-import Thumbnail from "./Thumbnail"
-import Spinner from "./Spinner"
-import SearchBar from "./SearchBar"
-import LoadMore from "./LoadMore"
+import HomeHero from "@components/HomeHero"
+import Grid from "@components/Grid"
+import Thumbnail from "@components/Thumbnail"
+import Spinner from "@components/Spinner"
+import SearchBar from "@components/SearchBar"
+import LoadMore from "@components/LoadMore"
 
 const Home = () => {
     const [hero, setHero] = useState(0)

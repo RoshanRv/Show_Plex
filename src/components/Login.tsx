@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from "react"
 import { useState, useContext } from "react"
-import API from "../API"
-import { Context } from "../context"
-import LoadMore from "./LoadMore"
+import API from "src/API"
+import { Context } from "src/context"
+import LoadMore from "@components/LoadMore"
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {

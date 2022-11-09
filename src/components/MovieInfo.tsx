@@ -4,12 +4,12 @@ import {
     POSTER_SIZE,
     BACKDROP_SIZE,
     PRODUCTION_SIZE,
-} from "../config"
-import API from "../API"
-import Rate from "./Rate"
-import { Context } from "../context"
-import ProductionHouse from "./ProductionHouse"
-import { MovieState } from "../hooks/useFetchMovie"
+} from "src/config"
+import API from "src/API"
+import Rate from "@components/Rate"
+import { Context } from "src/context"
+import ProductionHouse from "@components/ProductionHouse"
+import { MovieState } from "@hooks/useFetchMovie"
 
 interface MovieInfoProp {
     movieinfo: MovieState

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 
-import { persistState } from "../helpers"
-import API from "../API"
-import { Movie, Cast, Crew } from "../API"
+import { persistState } from "src/helpers"
+import API from "src/API"
+import { Movie, Cast, Crew } from "src/API"
 
 export interface MovieState extends Movie {
     actors: Cast[]

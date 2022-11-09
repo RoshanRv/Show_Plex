@@ -1,6 +1,6 @@
 import React from "react"
 import { useContext, useState } from "react"
-import { Context } from "../context"
+import { Context } from "src/context"
 import { useNavigate } from "react-router-dom"
 
 interface LogoutProp {
