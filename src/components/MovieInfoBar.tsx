@@ -1,5 +1,4 @@
 import React from "react"
-import { Movie } from "src/API"
 import { calcTime, convertMoney } from "src/helpers"
 
 interface MovieInfoBarProps {

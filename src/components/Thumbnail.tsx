@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Movie } from "src/API"
 
 interface ThumbnailProps {
     image: string

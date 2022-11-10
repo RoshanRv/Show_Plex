@@ -1,5 +1,4 @@
-import React from "react"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Context } from "src/context"
 import { useNavigate } from "react-router-dom"
 

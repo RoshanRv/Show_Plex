@@ -1,6 +1,3 @@
-import React from "react"
-import { useState, useEffect } from "react"
-
 interface LoadMoreProps {
     text: string
     color: string

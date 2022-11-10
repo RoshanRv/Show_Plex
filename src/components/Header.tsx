@@ -1,5 +1,4 @@
-import React, { useContext, useState, useRef } from "react"
-import { useEffect } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 // Images
 import show_plex from "@images/show-plex_logo.png"

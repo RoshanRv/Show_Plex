@@ -1,6 +1,4 @@
-import React, { useState, useContext } from "react"
-import { Context } from "src/context"
-import LoadMore from "@components/LoadMore"
+import React, { useState } from "react"
 
 interface RateProps {
     result: number
